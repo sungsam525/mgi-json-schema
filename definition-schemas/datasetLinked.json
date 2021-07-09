@@ -8,18 +8,21 @@
             "title": "Is Part Of",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "Collection",
-                    "Dataset",
-                    "File",
-                    "MaterialStructure",
-                    "MaterialProperty",
-                    "MaterialPerformance",
-                    "TabularData",
-                    "TabularDataPackage"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Referenced Item",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "Collection",
+                        "Dataset",
+                        "File",
+                        "MaterialStructure",
+                        "MaterialProperty",
+                        "MaterialPerformance",
+                        "TabularData",
+                        "TabularDataPackage"
+                    ]}}}
+                }}
             }
         },
         "hasPart": {
@@ -27,17 +30,20 @@
             "title": "Supporting Dataset Parts",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "Dataset",
-                    "File",
-                    "MaterialStructure",
-                    "MaterialProperty",
-                    "MaterialPerformance",
-                    "TabularData",
-                    "TabularDataPackage"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Referenced Item",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "Dataset",
+                        "File",
+                        "MaterialStructure",
+                        "MaterialProperty",
+                        "MaterialPerformance",
+                        "TabularData",
+                        "TabularDataPackage"
+                    ]}}}
+                }}
             }
         },
         "isBasedOn": {
@@ -45,19 +51,22 @@
             "title": "Item is derived from",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "Dataset",
-                    "File",
-                    "MaterialStructure",
-                    "MaterialProperty",
-                    "MaterialPerformance",
-                    "TabularData",
-                    "TabularDataPackage",
-                    "SoftwareApplication",
-                    "SoftwareSourceCode"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Referenced Item",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "Dataset",
+                        "File",
+                        "MaterialStructure",
+                        "MaterialProperty",
+                        "MaterialPerformance",
+                        "TabularData",
+                        "TabularDataPackage",
+                        "SoftwareApplication",
+                        "SoftwareSourceCode"
+                    ]}}}
+                }}
             }
         }
     }

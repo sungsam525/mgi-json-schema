@@ -15,14 +15,19 @@
             "description": "This field is for linking to any substance (e.g., sample, specimen, material, chemical, etc.), or a specific sup-sample (e.g., location on a larger artifact, sub-portion of a larger artifact, item within a collection of specimens, etc.).",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Material",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Material"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Material",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Material"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -39,24 +44,99 @@
                     "type": "string",
                     "title": "Name"
                 },
+                "propertyID": {
+                    "title": "Property IDs",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "value": {
                     "title": "Value"
                 },
+                "minValue": {
+                    "title": "Minimum Value"
+                },
+                "maxValue": {
+                    "title": "Maximum Value"
+                },
+                "uncertainty": {
+                    "title": "Uncertainty"
+                },
+                "valueID": {
+                    "title": "Value IDs",
+                    "type": "array",
+                    "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Value ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "unitText": {
-                    "title": "Unit Text",
-                    "type": "string"
+                    "title": "Unit Text"
                 },
                 "unitCode": {
                     "title": "Unit Code",
-                    "type": "string",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "UnitOfMeasurement"
-                                ]
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "UnitOfMeasurement"
+                                            ]
+                                        }
+                                    }
+                                }
                             }
                         }
+                    }
+                },
+                "valueReference": {
+                    "type": "array",
+                    "title": "Reference Values",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "title": "Reference Value",
+                        "$ref": "#/definitions/PropertyValue"
                     }
                 }
             }
@@ -66,17 +146,24 @@
             "title": "Synthesis/Measurement/Computational Technique or Instrument/Software Used",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DefinedTerm",
-                                "Instrument",
-                                "SoftwareApplication",
-                                "SoftwareSourceCode"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "DefinedTerm",
+                                        "Instrument",
+                                        "SoftwareApplication",
+                                        "SoftwareSourceCode",
+                                        "ProcessHistory",
+                                        "ProcessProtocol"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -124,14 +211,19 @@
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Property ID",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": [
-                                            "DefinedTerm"
-                                        ]
+                            "type": "object",
+                            "properties": {
+                                "@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {
+                                        "type": {
+                                            "handleReference": {
+                                                "types": [
+                                                    "DefinedTerm"
+                                                ]
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -199,12 +291,17 @@
             "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -216,16 +313,21 @@
             "description": "This is for linking controlled vocabulary terms and parent projects.",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Subject/Project",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DefinedTerm",
-                                "Project",
-                                "Collection"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Subject/Project",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "DefinedTerm",
+                                        "Project",
+                                        "Collection"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -265,16 +367,21 @@
             "description": "The direct performer or driver of the action (animate or inanimate).",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Agent",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Agent",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -286,16 +393,21 @@
             "description": "Other co-agents that participated in the action indirectly.",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Participant",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Participant",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -306,14 +418,19 @@
             "title": "Location",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Place",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Place"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Place"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

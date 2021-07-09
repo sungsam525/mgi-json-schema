@@ -41,14 +41,19 @@
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Property ID",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": [
-                                            "DefinedTerm"
-                                        ]
+                            "type": "object",
+                            "properties": {
+                                "@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {
+                                        "type": {
+                                            "handleReference": {
+                                                "types": [
+                                                    "DefinedTerm"
+                                                ]
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -116,12 +121,17 @@
             "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -133,12 +143,17 @@
             "description": "The subject matter of this thing (e.g., DefinedTerm, Project, Material, Experiment, Study, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -159,12 +174,17 @@
             "title": "Citations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Citation",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Citation",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -175,16 +195,21 @@
             "title": "Funders",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Funder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Funder",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -195,15 +220,20 @@
             "title": "Accountable Persons",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Accountable Person",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Accountable Person",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -214,16 +244,21 @@
             "title": "Authors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Author",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Author",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -234,15 +269,20 @@
             "title": "Editors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Editor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Editor",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -253,16 +293,21 @@
             "title": "Creators",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Creator",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Creator",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -273,16 +318,21 @@
             "title": "Contributors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Contributor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Contributor",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -293,16 +343,21 @@
             "title": "Providers",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Provider",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Provider",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -313,16 +368,21 @@
             "title": "Publishers",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Publisher",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Publisher",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -333,16 +393,21 @@
             "title": "Copyright Holders",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Copyright Holder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Copyright Holder",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -381,14 +446,19 @@
             "title": "Comments",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Comment",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Comment"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Comment",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Comment"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -399,14 +469,19 @@
             "title": "Specific Spatial Location",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Place",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Place"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Place"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

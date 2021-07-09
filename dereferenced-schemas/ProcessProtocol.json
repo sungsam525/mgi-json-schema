@@ -20,135 +20,24 @@
                     "type": "string",
                     "title": "Name"
                 },
-                "value": {
-                    "title": "Value"
-                },
-                "unitText": {
-                    "title": "Unit Text",
-                    "type": "string"
-                },
-                "unitCode": {
-                    "title": "Unit Code",
-                    "type": "string",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "UnitOfMeasurement"
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "workExample": {
-            "type": "array",
-            "title": "Resulting Materials/Data",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Resulting Material/Data",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Material",
-                                "Dataset",
-                                "File",
-                                "MaterialStructure",
-                                "MaterialProperty",
-                                "MaterialPerformance",
-                                "TabularData",
-                                "TabularDataPackage"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "supply": {
-            "type": "array",
-            "title": "Supply/Starting Materials",
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "title": "Supply/Starting Material",
-                "properties": {
-                    "@type": {
-                        "type": "array",
-                        "default": [
-                            "HowToSupply",
-                            "mat:Material"
-                        ]
-                    },
-                    "identifier": {
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "Material"
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "name": {
-                        "type": "string",
-                        "title": "Name"
-                    },
-                    "requiredQuantity": {
-                        "$ref": "#/definitions/QuantitativeValue"
-                    }
-                }
-            }
-        },
-        "measurementTechnique": {
-            "type": "array",
-            "title": "Synthesis/Measurement/Computational Technique or Instrument/Software Used",
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DefinedTerm",
-                                "Instrument",
-                                "SoftwareApplication",
-                                "SoftwareSourceCode"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "PropertyValue": {
-            "type": "object",
-            "properties": {
-                "@type": {
-                    "type": "string",
-                    "default": "PropertyValue"
-                },
-                "name": {
-                    "type": "string",
-                    "title": "Name"
-                },
                 "propertyID": {
                     "title": "Property IDs",
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                        "title": "Property ID",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "DefinedTerm"
-                                    ]
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm"
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -172,61 +61,10 @@
                     "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
                     "uniqueItems": true,
                     "items": {
-                        "title": "Value ID",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "DefinedTerm"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "unitText": {
-                    "title": "Unit Text",
-                    "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
-                },
-                "unitCode": {
-                    "title": "Unit Code",
-                    "type": "string",
-                    "cordra": {
-                        "type": {
-                            "handleReference": {
-                                "types": [
-                                    "UnitOfMeasurement"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "valueReference": {
-                    "type": "array",
-                    "title": "Reference Values",
-                    "uniqueItems": true,
-                    "items": {
                         "type": "object",
-                        "title": "Reference Value",
                         "properties": {
-                            "@type": {
-                                "type": "string",
-                                "default": "PropertyValue"
-                            },
-                            "name": {
-                                "type": "string",
-                                "title": "Name"
-                            },
-                            "propertyID": {
-                                "title": "Property ID/Name",
+                            "@id": {
+                                "title": "Value ID",
                                 "type": "string",
                                 "cordra": {
                                     "type": {
@@ -237,35 +75,22 @@
                                         }
                                     }
                                 }
-                            },
-                            "value": {
-                                "title": "Value"
-                            },
-                            "valueID": {
-                                "title": "Value IDs",
-                                "type": "array",
-                                "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
-                                "uniqueItems": true,
-                                "items": {
-                                    "title": "Value ID",
-                                    "type": "string",
-                                    "cordra": {
-                                        "type": {
-                                            "handleReference": {
-                                                "types": [
-                                                    "DefinedTerm"
-                                                ]
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "unitText": {
-                                "title": "Unit Text",
-                                "type": "string"
-                            },
-                            "unitCode": {
-                                "title": "Unit Code",
+                            }
+                        }
+                    }
+                },
+                "unitText": {
+                    "title": "Unit Text"
+                },
+                "unitCode": {
+                    "title": "Unit Code",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
                                 "type": "string",
                                 "cordra": {
                                     "type": {
@@ -278,6 +103,224 @@
                                 }
                             }
                         }
+                    }
+                },
+                "valueReference": {
+                    "type": "array",
+                    "title": "Reference Values",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "title": "Reference Value",
+                        "$ref": "#/definitions/PropertyValue"
+                    }
+                }
+            }
+        },
+        "workExample": {
+            "type": "array",
+            "title": "Resulting Materials/Data",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Resulting Material/Data",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Material",
+                                        "Dataset",
+                                        "File",
+                                        "MaterialStructure",
+                                        "MaterialProperty",
+                                        "MaterialPerformance",
+                                        "TabularData",
+                                        "TabularDataPackage"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "supply": {
+            "type": "array",
+            "title": "Supply/Starting Materials",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "title": "Supply/Starting Material",
+                "properties": {
+                    "@type": {
+                        "type": "array",
+                        "default": [
+                            "HowToSupply",
+                            "mat:Material"
+                        ]
+                    },
+                    "identifier": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "Material"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "requiredQuantity": {
+                        "$ref": "#/definitions/QuantitativeValue"
+                    }
+                }
+            }
+        },
+        "measurementTechnique": {
+            "type": "array",
+            "title": "Synthesis/Measurement/Computational Technique or Instrument/Software Used",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "DefinedTerm",
+                                        "Instrument",
+                                        "SoftwareApplication",
+                                        "SoftwareSourceCode",
+                                        "ProcessHistory",
+                                        "ProcessProtocol"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "PropertyValue": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "default": "PropertyValue"
+                },
+                "name": {
+                    "type": "string",
+                    "title": "Name"
+                },
+                "propertyID": {
+                    "title": "Property IDs",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "value": {
+                    "title": "Value"
+                },
+                "minValue": {
+                    "title": "Minimum Value"
+                },
+                "maxValue": {
+                    "title": "Maximum Value"
+                },
+                "uncertainty": {
+                    "title": "Uncertainty"
+                },
+                "valueID": {
+                    "title": "Value IDs",
+                    "type": "array",
+                    "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Value ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "unitText": {
+                    "title": "Unit Text"
+                },
+                "unitCode": {
+                    "title": "Unit Code",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "title": "Property ID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "UnitOfMeasurement"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "valueReference": {
+                    "type": "array",
+                    "title": "Reference Values",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "title": "Reference Value",
+                        "$ref": "#/definitions/PropertyValue"
                     }
                 },
                 "variableMeasured": {
@@ -335,12 +378,17 @@
                     "description": "The subject matter of this thing (e.g., DefinedTerm, Project, Material, Experiment, Study, etc.)",
                     "uniqueItems": true,
                     "items": {
-                        "type": "string",
-                        "title": "Referenced Item",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": []
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "title": "Referenced Item",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": []
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -366,15 +414,20 @@
                     "title": "Process is based on",
                     "uniqueItems": true,
                     "items": {
-                        "type": "string",
-                        "title": "Process",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "ProcessProtocol",
-                                        "ProcessHistory"
-                                    ]
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "title": "Process",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "ProcessProtocol",
+                                                "ProcessHistory"
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -385,15 +438,20 @@
                     "title": "Subprocess",
                     "uniqueItems": true,
                     "items": {
-                        "type": "string",
-                        "title": "Subprocess",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "ProcessProtocol",
-                                        "ProcessHistory"
-                                    ]
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "title": "Subprocess",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "ProcessProtocol",
+                                                "ProcessHistory"
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -404,16 +462,21 @@
                     "title": "Parent Process and Collections",
                     "uniqueItems": true,
                     "items": {
-                        "type": "string",
-                        "title": "Parent Process or Collection",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "Collection",
-                                        "ProcessProtocol",
-                                        "ProcessHistory"
-                                    ]
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "title": "Parent Process or Collection",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "Collection",
+                                                "ProcessProtocol",
+                                                "ProcessHistory"
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -460,17 +523,22 @@
                     "title": "Tools used to perform the process",
                     "uniqueItems": true,
                     "items": {
-                        "type": "string",
-                        "title": "Tools used to perform the process",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": [
-                                        "DefinedTerm",
-                                        "Instrument",
-                                        "SoftwareApplication",
-                                        "SoftwareSourceCode"
-                                    ]
+                        "type": "object",
+                        "properties": {
+                            "@id": {
+                                "type": "string",
+                                "title": "Tools used to perform the process",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": [
+                                                "DefinedTerm",
+                                                "Instrument",
+                                                "SoftwareApplication",
+                                                "SoftwareSourceCode"
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -564,14 +632,19 @@
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Property ID",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": [
-                                            "DefinedTerm"
-                                        ]
+                            "type": "object",
+                            "properties": {
+                                "@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {
+                                        "type": {
+                                            "handleReference": {
+                                                "types": [
+                                                    "DefinedTerm"
+                                                ]
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -639,12 +712,17 @@
             "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -656,12 +734,17 @@
             "description": "The subject matter of this thing (e.g., DefinedTerm, Project, Material, Experiment, Study, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -682,12 +765,17 @@
             "title": "Citations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Citation",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Citation",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -698,16 +786,21 @@
             "title": "Funders",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Funder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Funder",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -718,15 +811,20 @@
             "title": "Accountable Persons",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Accountable Person",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Accountable Person",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -737,16 +835,21 @@
             "title": "Authors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Author",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Author",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -757,15 +860,20 @@
             "title": "Editors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Editor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Editor",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -776,16 +884,21 @@
             "title": "Creators",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Creator",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Creator",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -796,16 +909,21 @@
             "title": "Contributors",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Contributor",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Contributor",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -816,16 +934,21 @@
             "title": "Providers",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Provider",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Provider",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -836,16 +959,21 @@
             "title": "Publishers",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Publisher",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Publisher",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -856,16 +984,21 @@
             "title": "Copyright Holders",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Copyright Holder",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "User",
-                                "Person",
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Copyright Holder",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "User",
+                                        "Person",
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -904,14 +1037,19 @@
             "title": "Comments",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Comment",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Comment"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Comment",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Comment"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -922,14 +1060,19 @@
             "title": "Specific Spatial Location",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Place",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Place"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Place"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -945,15 +1088,20 @@
             "title": "Process is based on",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Process",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "ProcessProtocol",
-                                "ProcessHistory"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Process",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "ProcessProtocol",
+                                        "ProcessHistory"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -964,15 +1112,20 @@
             "title": "Subprocess",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Subprocess",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "ProcessProtocol",
-                                "ProcessHistory"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Subprocess",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "ProcessProtocol",
+                                        "ProcessHistory"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -983,16 +1136,21 @@
             "title": "Parent Process and Collections",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Parent Process or Collection",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Collection",
-                                "ProcessProtocol",
-                                "ProcessHistory"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Parent Process or Collection",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Collection",
+                                        "ProcessProtocol",
+                                        "ProcessHistory"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -1039,17 +1197,22 @@
             "title": "Tools used to perform the process",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Tools used to perform the process",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "DefinedTerm",
-                                "Instrument",
-                                "SoftwareApplication",
-                                "SoftwareSourceCode"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Tools used to perform the process",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "DefinedTerm",
+                                        "Instrument",
+                                        "SoftwareApplication",
+                                        "SoftwareSourceCode"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

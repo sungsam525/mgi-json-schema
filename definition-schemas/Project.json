@@ -11,9 +11,12 @@
                 "description": "This is for controlled vocabulary terms.",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Subject",
-                    "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Subject",
+                        "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    }}
                 }
             },
             "keywords": {
@@ -41,12 +44,15 @@
                 "title": "Contact Points",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Contact Point",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "Person",
-                        "User"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Contact Point",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Person",
+                            "User"
+                        ]}}}
+                    }}
                 }
             },
             "email": {
@@ -58,9 +64,12 @@
                 "title": "Child Projects",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Child Project",
-                    "cordra": {"type": {"handleReference": {"types": ["Project"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Child Project",
+                        "cordra": {"type": {"handleReference": {"types": ["Project"]}}}
+                    }}
                 }
             },
             "parentOrganization": {
@@ -68,9 +77,12 @@
                 "title": "Parent Projects",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Parent Project",
-                    "cordra": {"type": {"handleReference": {"types": ["Project"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Parent Project",
+                        "cordra": {"type": {"handleReference": {"types": ["Project"]}}}
+                    }}
                 }
             },
             "member": {
@@ -78,13 +90,16 @@
                 "title": "Participating Organizations/Persons",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Participating Organization/Person",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "Organization",
-                        "User",
-                        "Person"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Participating Organization/Person",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Organization",
+                            "User",
+                            "Person"
+                        ]}}}
+                    }}
                 }
             },
             "memberOf": {
@@ -92,9 +107,12 @@
                 "title": "Host Organizations",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Host Organization",
-                    "cordra": {"type": {"handleReference": {"types": ["Organization"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Host Organization",
+                        "cordra": {"type": {"handleReference": {"types": ["Organization"]}}}
+                    }}
                 }
             },
             "isPartOf": {
@@ -102,9 +120,12 @@
                 "title": "Is Part Of",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Is Part Of",
-                    "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Is Part Of",
+                        "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    }}
                 }
             }
         }

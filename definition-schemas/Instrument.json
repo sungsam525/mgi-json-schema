@@ -9,19 +9,25 @@
                 "title": "Has Parent Instruments and Collections",
                 "type": "array",
                 "items": {
-                    "title": "Has Parent Instrument or Collection",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "Collection",
-                        "Instrument"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Has Parent Instrument or Collection",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Collection",
+                            "Instrument"
+                        ]}}}
+                    }}
                 }
             },
             "hasPart": {
                 "title": "Has Parts",
                 "type": "array",
                 "items": {
-                    "title": "Has Child Part",
-                    "cordra": {"type": {"handleReference": {"types": ["Instrument"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Has Child Part",
+                        "cordra": {"type": {"handleReference": {"types": ["Instrument"]}}}
+                    }}
                 }
             },
             "address": {

@@ -64,14 +64,19 @@
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Property ID",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": [
-                                            "DefinedTerm"
-                                        ]
+                            "type": "object",
+                            "properties": {
+                                "@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {
+                                        "type": {
+                                            "handleReference": {
+                                                "types": [
+                                                    "DefinedTerm"
+                                                ]
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -139,12 +144,17 @@
             "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -160,15 +170,20 @@
             "title": "Contact Points",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Contact Point",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Person",
-                                "User"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Contact Point",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Person",
+                                        "User"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -187,14 +202,19 @@
             "title": "Child Organizations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Child Organization",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Child Organization",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -205,14 +225,19 @@
             "title": "Parent Organizations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Parent Organization",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Parent Organization",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -223,16 +248,21 @@
             "title": "Member Organizations/Persons",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Member Organization/Person",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Organization",
-                                "User",
-                                "Person"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Member Organization/Person",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Organization",
+                                        "User",
+                                        "Person"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -243,14 +273,19 @@
             "title": "Member of Organizations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Member of Organization",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Member of Organization",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

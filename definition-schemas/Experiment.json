@@ -33,19 +33,29 @@
                 }
             },
             "isPartOf": {
-                "title": "Has Parent Experiment",
+                "title": "Has Parent Item(s)",
                 "type": "array",
                 "items": {
-                    "title": "Referenced Item",
-                    "cordra": {"type": {"handleReference": {"types": ["Experiment"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Referenced Item",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Collection",
+                            "Experiment",
+                            "Study"
+                        ]}}}
+                    }}
                 }
             },
             "hasPart": {
-                "title": "Has Parent Experiment",
+                "title": "Has Child Item(s)",
                 "type": "array",
                 "items": {
-                    "title": "Referenced Item",
-                    "cordra": {"type": {"handleReference": {"types": ["Experiment"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Referenced Item",
+                        "cordra": {"type": {"handleReference": {"types": []}}}
+                    }}
                 }
             }
         }

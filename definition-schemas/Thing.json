@@ -21,9 +21,12 @@
                             "type": "array",
                             "uniqueItems": true,
                             "items": {
-                                "title": "Property ID",
-                                "type": "string",
-                                "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                                "type": "object",
+                                "properties": {"@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                                }}
                             }
                         },
                         "name": {
@@ -76,9 +79,12 @@
                 "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Referenced Item",
-                    "cordra": {"type": {"handleReference": {"types": []}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {"type": {"handleReference": {"types": []}}}
+                    }}
                 }
             }
         }

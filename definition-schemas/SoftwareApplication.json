@@ -11,9 +11,12 @@
                 "description": "This is for controlled vocabulary terms.",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Application Category",
-                    "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Application Category",
+                        "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    }}
                 }
             },
             "applicationSuite": {
@@ -21,9 +24,12 @@
                 "title": "Application Suites",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Application Suite",
-                    "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Application Suite",
+                        "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    }}
                 }
             },
             "operatingSystem": {
@@ -31,8 +37,12 @@
                 "title": "Operating Systems",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Operating System"
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Operating System",
+                        "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    }}
                 }
             },
             "softwareAddOn": {
@@ -40,9 +50,12 @@
                 "title": "Software Add Ons",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Software Add On",
-                    "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Software Add On",
+                        "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    }}
                 }
             },
             "softwareRequirements": {
@@ -60,9 +73,12 @@
                 "title": "Is Part Of",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Is Part Of",
-                    "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Is Part Of",
+                        "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    }}
                 }
             }
         }

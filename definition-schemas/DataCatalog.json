@@ -10,9 +10,12 @@
                 "title": "Datasets",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Dataset",
-                    "cordra": {"type": {"handleReference": {"types": []}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Dataset",
+                        "cordra": {"type": {"handleReference": {"types": []}}}
+                    }}
                 }
             },
             "isPartOf": {
@@ -20,9 +23,12 @@
                 "title": "Is Part Of",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Is Part Of",
-                    "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Is Part Of",
+                        "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    }}
                 }
             }
         }

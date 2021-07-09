@@ -18,9 +18,12 @@
                 "title": "Software Applications",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Software Application",
-                    "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Software Application",
+                        "cordra": {"type": {"handleReference": {"types": ["SoftwareApplication"]}}}
+                    }}
                 }
             },
             "isPartOf": {
@@ -28,9 +31,12 @@
                 "title": "Is Part Of",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Is Part Of",
-                    "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Is Part Of",
+                        "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    }}
                 }
             },
             "isBasedOn": {"$ref": "datasetLinked.json#/definitions/isBasedOn"}

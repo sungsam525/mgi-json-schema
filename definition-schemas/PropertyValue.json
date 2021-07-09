@@ -18,45 +18,45 @@
                 "type": "array",
                 "uniqueItems": true,
                 "items": {
-                    "title": "Property ID",
-                    "type": "string",
-                    "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Property ID",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    }}
                 }
             },
-            "value": {
-                "title": "Value"
-            },
-            "minValue": {
-                "title": "Minimum Value"
-            },
-            "maxValue": {
-                "title": "Maximum Value"
-            },
-            "uncertainty": {
-                "title": "Uncertainty"
-            },
+            "value": {"title": "Value"},
+            "minValue": {"title": "Minimum Value"},
+            "maxValue": {"title": "Maximum Value"},
+            "uncertainty": {"title": "Uncertainty"},
             "valueID": {
                 "title": "Value IDs",
                 "type": "array",
                 "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
                 "uniqueItems": true,
                 "items": {
-                    "title": "Value ID",
-                    "type": "string",
-                    "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Value ID",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    }}
                 }
             },
-            "unitText": {
-                "title": "Unit Text",
-                "oneOf": [
-                    {"type": "string"},
-                    {"type": "null"}
-                ]
-            },
+            "unitText": {"title": "Unit Text"},
             "unitCode": {
                 "title": "Unit Code",
-                "type": "string",
-                "cordra": {"type": {"handleReference": {"types": ["UnitOfMeasurement"]}}}
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Property ID",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": ["UnitOfMeasurement"]}}}
+                    }}
+                }
             },
             "valueReference": {
                 "type": "array",
@@ -65,44 +65,7 @@
                 "items": {
                     "type": "object",
                     "title": "Reference Value",
-                    "properties": {
-                        "@type": {
-                            "type": "string",
-                            "default": "PropertyValue"
-                        },
-                        "name": {
-                            "type": "string",
-                            "title": "Name"
-                        },
-                        "propertyID": {
-                            "title": "Property ID/Name",
-                            "type": "string",
-                            "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
-                        },
-                        "value": {
-                            "title": "Value"
-                        },
-                        "valueID": {
-                            "title": "Value IDs",
-                            "type": "array",
-                            "description": "A commonly used identifier for the value represented by the property. This can be used when the value of the property is a DefinedTerm.",
-                            "uniqueItems": true,
-                            "items": {
-                                "title": "Value ID",
-                                "type": "string",
-                                "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
-                            }
-                        },
-                        "unitText": {
-                            "title": "Unit Text",
-                            "type": "string"
-                        },
-                        "unitCode": {
-                            "title": "Unit Code",
-                            "type": "string",
-                            "cordra": {"type": {"handleReference": {"types": ["UnitOfMeasurement"]}}}
-                        }
-                    }
+                    "$ref": "#/definitions/PropertyValue"
                 }
             },
             "variableMeasured": {

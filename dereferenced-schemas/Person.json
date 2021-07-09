@@ -41,14 +41,19 @@
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Property ID",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": [
-                                            "DefinedTerm"
-                                        ]
+                            "type": "object",
+                            "properties": {
+                                "@id": {
+                                    "title": "Property ID",
+                                    "type": "string",
+                                    "cordra": {
+                                        "type": {
+                                            "handleReference": {
+                                                "types": [
+                                                    "DefinedTerm"
+                                                ]
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -116,12 +121,17 @@
             "description": "A CreativeWork about this Thing (e.g., Linked Materials, Datasets, etc.)",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Referenced Item",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": []
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": []
+                                }
+                            }
                         }
                     }
                 }
@@ -162,14 +172,19 @@
             "title": "Affiliations",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Affiliation",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Organization"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Affiliation",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Organization"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -181,14 +196,19 @@
             "description": "A location where a person performs work (e.g., office, laboratory).",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Place",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": [
-                                "Place"
-                            ]
+                "type": "object",
+                "properties": {
+                    "@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": [
+                                        "Place"
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

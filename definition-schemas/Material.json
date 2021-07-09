@@ -11,21 +11,27 @@
                 "title": "Has Parent Materials and Collections",
                 "type": "array",
                 "items": {
-                    "title": "Has Parent Materialor Collection",
-                    "type": "string",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "Collection",
-                        "Material"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Has Parent Materialor Collection",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Collection",
+                            "Material"
+                        ]}}}
+                    }}
                 }
             },
             "hasPart": {
                 "title": "Has Child Materials",
                 "type": "array",
                 "items": {
-                    "title": "Has Child Material",
-                    "type": "string",
-                    "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Has Child Material",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                    }}
                 }
             },
             "variableMeasured": {
@@ -61,9 +67,12 @@
                 "title": "Material is based on",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Material",
-                    "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Material",
+                        "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                    }}
                 }
             }
         }

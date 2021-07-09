@@ -10,9 +10,12 @@
                 "title": "Has Collection Items",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Has Collection Item",
-                    "cordra": {"type": {"handleReference": {"types": []}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Has Collection Item",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": []}}}
+                    }}
                 }
             },
             "isPartOf": {
@@ -20,9 +23,12 @@
                 "title": "Is Part Of",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Is Part Of",
-                    "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "title": "Is Part Of",
+                        "type": "string",
+                        "cordra": {"type": {"handleReference": {"types": ["Collection"]}}}
+                    }}
                 }
             }
         }

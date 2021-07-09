@@ -10,13 +10,16 @@
                 "title": "Manufacturers",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Manufacturer",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "User",
-                        "Person",
-                        "Organization"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Manufacturer",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "User",
+                            "Person",
+                            "Organization"
+                        ]}}}
+                    }}
                 }
             },
             "brand": {"type": "string"},

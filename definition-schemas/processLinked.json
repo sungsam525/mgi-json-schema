@@ -8,12 +8,15 @@
             "title": "This Material/Data was created by/during this Process",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Processing History/Protocol",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "ProcessHistory",
-                    "ProcessProtocol"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Processing History/Protocol",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "ProcessHistory",
+                        "ProcessProtocol"
+                    ]}}}
+                }}
             }
         },
         "workExample": {
@@ -21,18 +24,21 @@
             "title": "Resulting Materials/Data",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "title": "Resulting Material/Data",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "Material",
-                    "Dataset",
-                    "File",
-                    "MaterialStructure",
-                    "MaterialProperty",
-                    "MaterialPerformance",
-                    "TabularData",
-                    "TabularDataPackage"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Resulting Material/Data",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "Material",
+                        "Dataset",
+                        "File",
+                        "MaterialStructure",
+                        "MaterialProperty",
+                        "MaterialPerformance",
+                        "TabularData",
+                        "TabularDataPackage"
+                    ]}}}
+                }}
             }
         },
         "supply": {
@@ -51,8 +57,11 @@
                         ]
                     },
                     "identifier": {
-                        "type": "string",
-                        "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                        "type": "object",
+                        "properties": {"@id": {
+                            "type": "string",
+                            "cordra": {"type": {"handleReference": {"types": ["Material"]}}}
+                        }}
                     },
                     "name": {
                         "type": "string",
@@ -67,12 +76,15 @@
             "title": "This Material is a Supply/Starting Material for this Process",
             "uniqueItems": true,
             "items": {
-                "title": "Process",
-                "type": "string",
-                "cordra": {"type": {"handleReference": {"types": [
-                    "ProcessHistory",
-                    "ProcessProtocol"
-                ]}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "title": "Process",
+                    "type": "string",
+                    "cordra": {"type": {"handleReference": {"types": [
+                        "ProcessHistory",
+                        "ProcessProtocol"
+                    ]}}}
+                }}
             }
         }
     }

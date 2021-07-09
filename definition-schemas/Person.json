@@ -20,9 +20,7 @@
             "email": {
                 "type": "string",
                 "title": "E-Mail Address",
-                "cordra": {"preview": {
-                    "showInPreview": true
-                }}
+                "cordra": {"preview": {"showInPreview": true}}
             },
             "telephone": {
                 "type": "string",
@@ -38,9 +36,12 @@
                 "title": "Affiliations",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Affiliation",
-                    "cordra": {"type": {"handleReference": {"types": ["Organization"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Affiliation",
+                        "cordra": {"type": {"handleReference": {"types": ["Organization"]}}}
+                    }}
                 }
             },
             "workLocation": {
@@ -49,9 +50,12 @@
                 "description": "A location where a person performs work (e.g., office, laboratory).",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Place",
-                    "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    }}
                 }
             }
         }

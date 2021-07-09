@@ -26,9 +26,12 @@
                 "description": "The subject matter of this thing (e.g., DefinedTerm, Project, Material, Experiment, Study, etc.)",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Referenced Item",
-                    "cordra": {"type": {"handleReference": {"types": []}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Referenced Item",
+                        "cordra": {"type": {"handleReference": {"types": []}}}
+                    }}
                 }
             },
             "keywords": {
@@ -51,12 +54,15 @@
                 "title": "Process is based on",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Process",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "ProcessProtocol",
-                        "ProcessHistory"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Process",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "ProcessProtocol",
+                            "ProcessHistory"
+                        ]}}}
+                    }}
                 }
             },
             "hasPart": {
@@ -64,12 +70,15 @@
                 "title": "Subprocess",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Subprocess",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "ProcessProtocol",
-                        "ProcessHistory"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Subprocess",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "ProcessProtocol",
+                            "ProcessHistory"
+                        ]}}}
+                    }}
                 }
             },
             "isPartOf": {
@@ -77,13 +86,16 @@
                 "title": "Parent Process and Collections",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Parent Process or Collection",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "Collection",
-                        "ProcessProtocol",
-                        "ProcessHistory"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Parent Process or Collection",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "Collection",
+                            "ProcessProtocol",
+                            "ProcessHistory"
+                        ]}}}
+                    }}
                 }
             },
             "supply": {"$ref": "processLinked.json#/definitions/supply"},
@@ -121,14 +133,17 @@
                 "title": "Tools used to perform the process",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Tools used to perform the process",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "DefinedTerm",
-                        "Instrument",
-                        "SoftwareApplication",
-                        "SoftwareSourceCode"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Tools used to perform the process",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "DefinedTerm",
+                            "Instrument",
+                            "SoftwareApplication",
+                            "SoftwareSourceCode"
+                        ]}}}
+                    }}
                 }
             },
             "estimatedCost": {

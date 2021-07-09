@@ -7,9 +7,12 @@
         "title": "Included In Data Catalogs",
         "uniqueItems": true,
         "items": {
-            "type": "string",
-            "title": "Included In Data Catalog",
-            "cordra": {"type": {"handleReference": {"types": ["DataCatalog"]}}}
+            "type": "object",
+            "properties": {"@id": {
+                "type": "string",
+                "title": "Included In Data Catalog",
+                "cordra": {"type": {"handleReference": {"types": ["DataCatalog"]}}}
+            }}
         }
     }}
 }

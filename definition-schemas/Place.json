@@ -11,16 +11,12 @@
                 "description": "This is for linking controlled vocabulary terms and parent projects.",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Subject/Project",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "DefinedTerm",
-                        "Project",
-                        "Collection",
-                        "ProcessHistory",
-                        "ProcessProtocol",
-                        "Material"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Subject/Project",
+                        "cordra": {"type": {"handleReference": {"types": ["DefinedTerm"]}}}
+                    }}
                 }
             },
             "keywords": {
@@ -68,18 +64,10 @@
                             "type": "string",
                             "default": "GeoShape"
                         },
-                        "box": {
-                            "title": "Box"
-                        },
-                        "circle": {
-                            "title": "Circle"
-                        },
-                        "line": {
-                            "title": "Line"
-                        },
-                        "polygon": {
-                            "title": "PolyGon"
-                        },
+                        "box": {"title": "Box"},
+                        "circle": {"title": "Circle"},
+                        "line": {"title": "Line"},
+                        "polygon": {"title": "PolyGon"},
                         "elevation": {
                             "title": "Elevation",
                             "type": "number"
@@ -93,9 +81,12 @@
                 "description": "The basic containment relation between a place and one that contains it.",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Place",
-                    "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    }}
                 }
             },
             "containsPlace": {
@@ -104,9 +95,12 @@
                 "description": "The basic containment relation between a place and another that it contains.",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Place",
-                    "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Place",
+                        "cordra": {"type": {"handleReference": {"types": ["Place"]}}}
+                    }}
                 }
             },
             "telephone": {
@@ -118,12 +112,15 @@
                 "title": "Accountable Persons",
                 "uniqueItems": true,
                 "items": {
-                    "type": "string",
-                    "title": "Accountable Person",
-                    "cordra": {"type": {"handleReference": {"types": [
-                        "User",
-                        "Person"
-                    ]}}}
+                    "type": "object",
+                    "properties": {"@id": {
+                        "type": "string",
+                        "title": "Accountable Person",
+                        "cordra": {"type": {"handleReference": {"types": [
+                            "User",
+                            "Person"
+                        ]}}}
+                    }}
                 }
             }
         }

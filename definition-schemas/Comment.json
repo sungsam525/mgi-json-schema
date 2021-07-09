@@ -14,9 +14,12 @@
                 "type": "number"
             },
             "parentItem": {
-                "type": "string",
-                "title": "Parent Item",
-                "cordra": {"type": {"handleReference": {"types": []}}}
+                "type": "object",
+                "properties": {"@id": {
+                    "type": "string",
+                    "title": "Parent Item",
+                    "cordra": {"type": {"handleReference": {"types": []}}}
+                }}
             },
             "text": {
                 "type": "string",
